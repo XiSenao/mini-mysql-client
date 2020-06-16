@@ -186,7 +186,6 @@ export default {
 		},
 		init () {
 			if(typeof(WebSocket) === "undefined"){
-				alert("您的浏览器不支持socket")
 				this.$notify.error({
 					title: 'Error',
 					message: 'The browse can not get connection by socket'	
@@ -217,6 +216,7 @@ export default {
 			console.log("连接错误")
 		},
 		getMessage (msg) {
+			console.log(msg)
 			// let key ="MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALueZ50bOutYYGlA7q+rmafpyk3feL1D1prVcNvnFfLCGzfdMxRQCAPc9G9ZctOV9jNq4A8ncZ57tF+REuQr9h8CAwEAAQ==$JhuAk$ceWi8egx2gJv79iBJcK5geY7F1/7LRyejLilRR1dJrgbBzaiGYm4u1Ovei6DHBpORq13/X48nBu/Wm8iUH12CQ=="
 			// 			,Encrypt = new JSEncrypt();
 			// 	let pkey = 'MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEAu55nnRs661hgaUDur6uZp+nKTd94vUPWmtVw2+cV8sIbN90zFFAIA9z0b1ly05X2M2rgDydxnnu0X5ES5Cv2HwIDAQABAkBgepujkY4h2cdyOJ7FHUQdsb6DfwhSo2DnLB0mJ9YEh+UVIy4E4hUy33ldjde/pJ/BQXjubyX2VWe94F1fKqwhAiEA3l1zLT2sOlBhKw+c9bBDohT7iKqG9VLxzpiYf25A5c8CIQDX/31BVs9cDfMHuTXjozlLyWilzztHNYWkozb+AjhOsQIhANwaF/WCBEY8ZdHfxHeUn32B03B1ityt21epx9jq4yYVAiBxL1pNcNX8IPsnIvCQNqoBgqspp+wiJnO/kB9y/2rOIQIgcevqRLOeebjVqviORa/hjwwI0obtEPxVOWZ5c6oYwL8='

@@ -53,7 +53,6 @@
 		},
 		methods: {
 			routerRefresh(){
-				console.log('Go')
 				// this.routerAlive = false;
 				// this.$nextTick(()=>{
 				// 	this.routerAlive = true;

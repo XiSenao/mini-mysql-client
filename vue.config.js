@@ -6,6 +6,7 @@ function resolve (dir) {
   return path.join(__dirname, dir)
 }
 module.exports = {
+  publicPath: './',
   lintOnSave: false,
   pluginOptions: { // 第三方插件配置
     'style-resources-loader': {

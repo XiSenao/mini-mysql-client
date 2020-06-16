@@ -194,6 +194,7 @@ function __insert (sql) {
 		}
 		return this.message({ table, limitBody, values }, MESSAGE.TYPE.SUCCESS, SQLTYPE.INSERT)
 	} catch (e) {
+		console.log(e)
 		return this.message(MESSAGE.MES_ERRORPARSE)
 	}
 }
@@ -215,13 +216,13 @@ function __select (sql) {
 			selectColumns = selectColumns.split(',')
 			for (let column of selectColumns) {
 				column = column.trim()
-				let splitValue = column.split('as')
+				let splitValue = column.split('.')
 				if (splitValue.length > 2) {
 					return this.message(MESSAGE.MES_ERRORSELECTCOLUMN)
 				}
 				selectColumnsArray.push({
-					tableAlias: splitValue[1] ? splitValue[1].trim() : null,
-					column: splitValue[0].trim()
+					tableAlias: splitValue[1] ? splitValue[0].trim() : null,
+					column: splitValue[1] ? splitValue[1].trim() : splitValue[0].trim() 
 				})
 			}
 		}

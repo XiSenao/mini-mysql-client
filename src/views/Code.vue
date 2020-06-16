@@ -320,12 +320,19 @@
 					obj.pointStr = data.resset.pointStr	
 					formula = obj
 					for (let itable of data.table) {
-						let reg = /\s*(.+)\s+as\s+(.+)\s*/
-						let match = itable.match(reg)
-						table.push({
-							tablename: match ? reg[1] : itable.trim(),
-							alias: reg[2] ? reg[2] : null
-						})
+						let reg = /\s*(.+)\s+as\s+(.+)\s*/, regCheck = /\s+as\s+/
+						if (regCheck.test(itable)) {
+							let match = itable.match(reg)
+							table.push({
+								tablename: match[1].trim(),
+								alias: match[2].trim()
+							})
+						} else {
+							table.push({
+								tablename: itable.trim(),
+								alias: null
+							})
+						}
 					}
 					deleteTable = JSON.stringify(deleteTable)
 					table = JSON.stringify(table)

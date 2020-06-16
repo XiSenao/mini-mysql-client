@@ -387,7 +387,7 @@ function clean (arr, sql) {
 
 export function convertExpression (sql) {
     sql = sql.replace(/\"/g, '\'').toLowerCase().trim()
-    let reg = /(\s*['"]?[a-z][a-z_1-9]*(\.[a-z][a-z_1-9]*|[a-z_1-9]*)['"]?\s*(=\s*['"]?[a-z][a-z_1-9]*(\.[a-z][a-z_1-9]*|[a-z_1-9]*)['"]?\s*)+|\s*['"]?[a-z][a-z_1-9]*(\.[a-z][a-z_1-9]*|[a-z_1-9]*)['"]?\s*(=|>|<)\s*['"]?([a-z][a-z_1-9]*(\.[a-z][a-z_1-9]*|[a-z_1-9]*)|\d+(\.\d+|\d*))['"]?\s*)/g
+    let reg = /(\s*['"]?[a-z\u4e00-\u9fa5][a-z_1-9\u4e00-\u9fa5]*(\.[a-z\u4e00-\u9fa5][a-z_1-9\u4e00-\u9fa5]*|[a-z_1-9\u4e00-\u9fa5]*)['"]?\s*(=\s*['"]?[a-z\u4e00-\u9fa5][a-z_1-9\u4e00-\u9fa5]*(\.[a-z\u4e00-\u9fa5][a-z_1-9\u4e00-\u9fa5]*|[a-z_1-9\u4e00-\u9fa5]*)['"]?\s*)+|\s*['"]?[a-z\u4e00-\u9fa5][a-z\u4e00-\u9fa5_1-9]*(\.[a-z\u4e00-\u9fa5][a-z_1-9\u4e00-\u9fa5]*|[a-z_1-9\u4e00-\u9fa5]*)['"]?\s*(=|>|<)\s*['"]?([a-z\u4e00-\u9fa5][a-z_1-9\u4e00-\u9fa5]*(\.[a-z\u4e00-\u9fa5][a-z_1-9\u4e00-\u9fa5]*|[a-z_1-9\u4e00-\u9fa5]*)|\d+(\.\d+|\d*))['"]?\s*)/g
     let opReg = /(.+)(=|>|<)(.+)/
     let current = sql.match(reg), arrRes = [], availableUID = []
     let SQLObj = clean(current, sql)

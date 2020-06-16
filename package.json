@@ -6,7 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dev": "vue-cli-service serve --open"
+    "dev": "vue-cli-service serve --open",
+    "electron_dev": "npm run build && electron electron.js",
+    "electron_build": "electron-packager ./dist untilCloud-07 --platform=win32 --arch=x64 --icon=./dist/favicon.ico --overwrite"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -38,6 +40,8 @@
     "@vue/eslint-config-standard": "^5.1.2",
     "babel-eslint": "^10.1.0",
     "compression-webpack-plugin": "^4.0.0",
+    "electron": "^9.0.4",
+    "electron-packager": "^14.2.1",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",

@@ -73,9 +73,6 @@ export default {
 		formData.set('table', table)
 		formData.set('formula', formula)
 		formData.set('resultColumns', resultColumns)
-		console.log(table)
-		console.log(formula)
-		console.log(resultColumns)
 		return ajax('select/table', 'post', {
 			data: formData
 		})
