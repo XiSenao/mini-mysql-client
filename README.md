@@ -82,7 +82,7 @@ npm run dev
 
 ## Example 
 
-​	**View details**[ `Demo.md`](https://github.com/FinalAshen/MySQL-Simulation/blob/master/Demo)
+​	**View details**[ `Demo.md`](https://github.com/FinalAshen/MySQL-Simulation/blob/master/Demo.md)
 
 
  * I am lazy and for technical reasons, the retrieval problem is simplified, only to achieve [ and, or, ), ( ] four non-recursive retrieval methods, the "pointStr" text involved in the retrieval method is optimized on the basis of RPN, to provide the retrieval logic for the back-end. 
