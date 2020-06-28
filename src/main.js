@@ -12,8 +12,8 @@ import 'font-awesome/css/font-awesome.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 
-import 'fullpage.js/vendors/scrolloverflow';
-import fullPage from 'vue-fullpage.js';
+import './assets/js/scrolloverflow'
+import fullPage from 'vue-fullpage';
 
 Vue.use(fullPage);
 
