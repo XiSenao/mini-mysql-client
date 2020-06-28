@@ -56,6 +56,7 @@
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "vue-cli-plugin-style-resources-loader": "^0.1.4",
+    "vue-fullpage": "^2.0.5",
     "vue-template-compiler": "^2.6.11"
   },
   "rules": {
