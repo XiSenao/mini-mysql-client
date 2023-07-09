@@ -64,17 +64,9 @@ export default {
 		localStorage.removeItem("name");
 		this.loginStatus = 'false';
 		localStorage.setItem('login_status', this.loginStatus);
-		setTimeout(() => {
-			this.handleMock();
-			this.doLogin();
-		}, 500);
 	},
 	methods: {
 		...mapMutations(['authority', 'setUserName']),
-		handleMock () {
-			this.loginInfo.id = "user1";
-			this.loginInfo.password = "1234567";
-		},	
 		goRegir () {
 			this.$router.push('/user/regir');
 		},
