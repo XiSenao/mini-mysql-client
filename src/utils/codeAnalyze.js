@@ -183,11 +183,10 @@ function __insert (sql) {
 			let currentValue = arr[i].value
 			let newArr = currentValue.substring(1, currentValue.length - 1).trim().replace(/(\s+)/g, '').split(',')
 			newArr = newArr.map(res => {
-				let now = res.substring(1, res.length - 1)
-				if (!now) {
-					return +res
+				if (res[0] === '"') {
+					return res.substring(1, res.length - 1);
 				} else {
-					return now
+					return +res;
 				}
 			})
 			values.push(newArr)
